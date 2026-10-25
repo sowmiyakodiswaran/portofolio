@@ -1,0 +1,579 @@
+
+/* ========================================
+   1. COLOR PALETTE & BASIC SETTINGS
+======================================== */
+:root {
+  --bg: #0B0F19;
+  --surface: #14213D;
+  --surface-hover: #1B2A41;
+
+  --text: #FCA311;
+  --accent: #FCA311;
+  --heading: #FFFFFF;
+  --muted: #D1D5DB;
+
+  --border: #293750;
+  --tag-bg: #1B2A41;
+  --tag-border: #344761;
+
+  --button-text: #0B0F19;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--muted);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Consistent headings */
+h1,
+h2,
+h3 {
+  color: var(--heading);
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+/* ========================================
+   2. NAVIGATION
+======================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-height: 72px;
+  padding: 16px 8%;
+  background: rgba(11, 15, 25, 0.96);
+  border-bottom: 1px solid var(--border);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  color: var(--heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  gap: 26px;
+}
+
+nav a {
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--accent);
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--accent);
+  font-size: 1.3rem;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* ========================================
+   3. HERO SECTION
+======================================== */
+.hero {
+  padding: 100px 8% 75px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.eyebrow,
+.project-type {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-size: clamp(2.3rem, 5vw, 4.2rem);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  max-width: 900px;
+}
+
+.hero-text,
+.section-text {
+  color: var(--muted);
+  max-width: 700px;
+  margin-top: 22px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+/* ========================================
+   4. BUTTONS
+======================================== */
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 20px;
+  border-radius: 9px;
+  font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.primary {
+  background: var(--accent);
+  color: var(--button-text);
+  border: 1px solid var(--accent);
+}
+
+.primary:hover {
+  background: #FFB733;
+  border-color: #FFB733;
+}
+
+.secondary {
+  background: transparent;
+  color: var(--heading);
+  border: 1px solid var(--border);
+}
+
+.secondary:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ========================================
+   5. SPECIALTY CARDS
+======================================== */
+.specialties {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 65px;
+}
+
+.specialty,
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 25px;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.specialty:hover,
+.card:hover {
+  border-color: #465B78;
+}
+
+.specialty-icon {
+  color: var(--accent);
+  font-size: 1.6rem;
+}
+
+.specialty h3,
+.card h3 {
+  margin: 8px 0;
+}
+
+.specialty p,
+.card p {
+  color: var(--muted);
+}
+
+/* ========================================
+   6. COMMON SECTIONS
+======================================== */
+.section {
+  max-width: 1200px;
+  padding: 75px 8%;
+  margin: auto;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.25;
+}
+
+.section-text {
+  margin-top: 22px;
+}
+
+/* ========================================
+   7. SKILLS
+======================================== */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tags span {
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.tags span:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ========================================
+   8. EXPERIENCE
+======================================== */
+.experience-card {
+  margin-top: 28px;
+}
+
+.experience-card .accent {
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.experience-card ul {
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.experience-card li {
+  padding: 4px 0;
+}
+
+/* ========================================
+   9. PROJECTS
+======================================== */
+
+/* Projects: description left, image right */
+.project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+}
+
+.project-content {
+  min-width: 0;
+}
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.project-card .text-link {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.project-card .text-link:hover {
+  color: #FFB733;
+}
+
+@media (max-width: 760px) {
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .project-image {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+
+/* ========================================
+   10. CONTACT & SOCIAL LINKS
+======================================== */
+.contact-section {
+  text-align: center;
+  padding-top: 95px;
+  padding-bottom: 95px;
+}
+
+.contact-section .section-text {
+  margin: 18px auto 26px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 25px;
+}
+
+/* ========================================
+   11. FOOTER
+======================================== */
+footer {
+  text-align: center;
+  padding: 25px 8%;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ========================================
+   12. MOBILE & TABLET
+======================================== */
+@media (max-width: 760px) {
+  .navbar {
+    padding: 14px 6%;
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    padding: 10px 0;
+  }
+
+  .hero {
+    padding: 70px 6% 45px;
+  }
+
+  .section {
+    padding: 55px 6%;
+  }
+
+  .specialties,
+  .skill-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .specialties {
+    margin-top: 42px;
+  }
+
+  .contact-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .social-links {
+    gap: 12px;
+  }
+}
+
+/* ========================================
+   13. REDUCED MOTION ACCESSIBILITY
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero entrance animation */
+.hero-content {
+  animation: fadeInUp 0.7s ease-out both;
+}
+
+/* Project image hover */
+.project-image {
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.03);
+}
+
+/* Button hover */
+button,
+.button,
+.text-link {
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Fade and move upward */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scroll reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Project card polish */
+.project-card {
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+}
+
+/* Keep image zoom within its area */
+.project-image {
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.03);
+}
+
+/* Accessible motion settings */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .project-card,
+  .project-image {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
